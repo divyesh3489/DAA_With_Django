@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="/" name="form_matrix">
+        {% csrf_token %}
+        <label for="matrices">Enter number of matrices :</label><input required type="number" min="3" name="matrix" id="matrices">
+        <div id="data">
+
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
+<script>
+     document.addEventListener("DOMContentLoaded", function () {
+            function matrix() {
+                var n = document.getElementById('matrices').value;
+                console.log(n);
+                data='' 
+                for (var i = 0; i <= parseInt(n); i++) {
+                    data+=`<label for="P${i}">Enter P${i}:</label><input type="number" required  min="1" name="P${i}" id="P${i}"><br>`
+                }
+                console.log(data)
+                document.getElementById("data").innerHTML=data
+            }
+        document.getElementById('matrices').addEventListener('change', matrix);
+     });
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        matrix m
+    </p>
+    <p>
+    <table border="2px" rules="all">
+        {% for i in m %}
+        <tr>
+            {% for j in i %}
+            <td>
+                {{j}}
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    </p>
+    <p>
+        matrix s
+    </p>
+    <p>
+    <table border="2px" rules="all">
+        {% for i in s %}
+        
+        <tr>
+            {% for j in i %}
+            <td>
+                {{j}}
+            </td>
+            {% endfor %}
+        
+        </tr>
+        {% endfor %}
+    </table>
+    </p>
+    <p>The Solution : {{solution}}</p>
+    <p>Minimum number of mulitipication is {{value}}</p>
+</body>
+
+</html>
